@@ -1,16 +1,21 @@
 'use client'
 
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import Logo from '@/components/Logo/Logo'
 import MenuBar from '@/components/MenuBar/MenuBar'
 import Navigation from '@/components/Navigation/Navigation'
 import SearchModal from './SearchModal'
 import SwitchDarkMode from '../SwitchDarkMode/SwitchDarkMode'
+import { AuthContext } from '@/provider/AuthProvider'
+import AvatarDropdown from './AvatarDropdown'
 
 export interface MainNav2LoggedProps {}
 
 const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
 	const renderContent = () => {
+		const authContext = useContext(AuthContext)
+
+		const { user } = authContext
 		return (
 			<div className="flex h-20 justify-between">
 				<div className="flex flex-1 items-center lg:hidden">
@@ -28,6 +33,9 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
 				<div className="flex flex-1 items-center justify-end text-slate-700 dark:text-slate-100">
 					<SwitchDarkMode />
 					<SearchModal />
+					{user ? user.name : 'Guest'}
+					{/* {user ? user.email : 'Guest'} */}
+					<AvatarDropdown />
 				</div>
 			</div>
 		)

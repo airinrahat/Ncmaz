@@ -3,6 +3,7 @@ import '@/styles/index.scss'
 import { Poppins } from 'next/font/google'
 import Footer from '@/components/Footer/Footer'
 import SiteHeader from './SiteHeader'
+import AuthProvider from '@/provider/AuthProvider'
 
 export const metadata = {
 	title: 'Ncmaz - Blog, News, Magazine template',
@@ -23,11 +24,13 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={poppins.className}>
 			<body className="">
-				<div className="bg-[#f8f8f8] text-base text-neutral-900 dark:bg-neutral-900/95 dark:text-neutral-200">
-					<SiteHeader />
-					{children}
-					<Footer />
-				</div>
+				<AuthProvider>
+					<div className="bg-[#f8f8f8] text-base text-neutral-900 dark:bg-neutral-900/95 dark:text-neutral-200">
+						<SiteHeader />
+						{children}
+						<Footer />
+					</div>
+				</AuthProvider>
 			</body>
 		</html>
 	)
