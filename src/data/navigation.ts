@@ -1,8 +1,8 @@
 import { NavItemType } from '@/components/Navigation/NavigationItem'
-import { AuthContext } from '@/provider/AuthProvider'
+// import { AuthContext } from '@/provider/AuthProvider'
 import { Route } from '@/routers/types'
 import _ from 'lodash'
-import { useContext } from 'react'
+// import { useContext } from 'react'
 
 const randomId = _.uniqueId
 
@@ -145,24 +145,24 @@ const OTHER_PAGE_CHILD: NavItemType[] = [
 	},
 ]
 
-// export const NAVIGATION_DEMO_2: NavItemType[] = [
-// 	{
-// 		id: randomId(),
-// 		href: '/',
-// 		name: 'Homes',
-// 	},
+export const NAVIGATION_DEMO_2: NavItemType[] = [
+	{
+		id: randomId(),
+		href: '/',
+		name: 'Homes',
+	},
 
-// 	{
-// 		id: randomId(),
-// 		href: '/archive/demo-slug' as Route,
-// 		name: 'Beauty',
-// 	},
+	{
+		id: randomId(),
+		href: '/archive/demo-slug' as Route,
+		name: 'Beauty',
+	},
 
-// 	{
-// 		id: randomId(),
-// 		href: '/archive/demo-slug' as Route,
-// 		name: 'Sport',
-// 	},
-// 	{ id: randomId(), href: '/login', name: 'Login' },
-// 	{ id: randomId(), href: '/signup', name: 'Logout' },
-// ]
+	{
+		id: randomId(),
+		href: '/archive/demo-slug' as Route,
+		name: 'Sport',
+	},
+	{ id: randomId(), href: '/login', name: 'Login' },
+	{ id: randomId(), href: '/signup', name: 'Logout' },
+]

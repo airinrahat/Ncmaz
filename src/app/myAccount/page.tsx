@@ -14,6 +14,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import AddProduct from '@/components/AddProduct/AddProduct'
+import { PlusIcon } from '@heroicons/react/24/solid'
 
 const Page = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -70,9 +71,10 @@ const Page = () => {
 									quidem!.
 								</span>
 
-								<ButtonPrimary className="w-25 h-2" onClick={openModal}>
+								{/* <ButtonPrimary className="w-25 h-2" onClick={openModal}>
 									<span>Update</span>
-								</ButtonPrimary>
+								</ButtonPrimary> */}
+
 								<SocialsList itemClass="block w-7 h-7" />
 								<Transition appear show={isOpen} as={Fragment}>
 									<Dialog
